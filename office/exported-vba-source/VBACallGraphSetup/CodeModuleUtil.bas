@@ -13,7 +13,7 @@ Public Sub getCodeModule(ByRef dicProcInfo As Dictionary, _
     Dim cProcInfo As ProcedureInfo
     Dim sProcName As String
     Dim sProcKey As String
-    Dim iProcKind As Long
+    Dim iProcKind As Long: iProcKind = 0
     Dim i As Long
     Dim VVC As Object
     Set VVC = wb.VBProject.VBComponents(sMod).CodeModule
