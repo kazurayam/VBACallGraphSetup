@@ -64,6 +64,10 @@ Public Sub ExportModules(ByVal wb As Workbook)
     '行の高さを自動調節する
     ws.Rows.AutoFit
     
+    'ウインドウ枠を固定する
+    ws.Cells(2, 7).Select
+    ActiveWindow.FreezePanes = True
+    
     Set dicProcInfo = Nothing
 End Sub
 
