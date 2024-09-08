@@ -17,12 +17,16 @@ Public LineNo As Long
 Public Source As String
 Public Comment As String
 
-Public Property Get ModuleType() As String
+Public Property Get moduleType() As String
     Select Case ModType
         Case 1
-            ModuleType = "Standard"
+            moduleType = "Standard"
         Case 2
-            ModuleType = "Class"
+            moduleType = "Class"
+        Case 3
+            moduleType = "Form"
+        Case 100
+            moduleType = "Document"
     End Select
 End Property
 

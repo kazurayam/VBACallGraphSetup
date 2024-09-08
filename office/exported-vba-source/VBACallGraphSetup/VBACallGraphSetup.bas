@@ -10,6 +10,13 @@ Public Sub ExportModules(ByVal wb As Workbook)
     'ブックの全モジュールを処理
     With wb.VBProject
         For i = 1 To .VBComponents.Count
+'            If .VBComponents(i).Name = "Sheet1" Then
+'                Debug.Print "Sheet1:" & .VBComponents(i).Type
+'            ElseIf .VBComponents(i).Name = "ThisWorkbook" Then
+'                Debug.Print "ThisWorkbook:" & .VBComponents(i).Type
+'            ElseIf .VBComponents(i).Name = "UserForm1" Then
+'                Debug.Print "UserForm1:" & .VBComponents(i).Type
+'            End If
             Call CodeModuleUtil.GetCodeModule(dicProcInfo, wb, .VBComponents(i).Name, .VBComponents(i).Type)
         Next
     End With
@@ -30,7 +37,7 @@ Public Sub ExportModules(ByVal wb As Workbook)
         i = 2
         For Each v In dicProcInfo.Items
             .Cells(i, 1) = wb.VBProject.Name   ' KazurayamVbaLib
-            .Cells(i, 2) = v.ModuleType        ' Standard | Class (Sheet Module, ThisWorkbook Module, Userformsは未サポート)
+            .Cells(i, 2) = v.moduleType        ' Standard | Class (Sheet Module, ThisWorkbook Module, Userformsは未サポート)
             .Cells(i, 3) = v.ModName           ' KzSensible
             .Cells(i, 4) = v.Scope             ' Public | Private | Static
             ' .Cells(i, 5) = v.ProcKindName

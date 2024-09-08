@@ -9,7 +9,7 @@ Option Explicit
 Public Sub GetCodeModule(ByRef dicProcInfo As Dictionary, _
                          ByVal wb As Workbook, _
                          ByVal sMod As String, _
-                         ByVal ModuleType As String)
+                         ByVal moduleType As String)
     Dim cProcInfo As ProcedureInfo
     Dim sProcName As String
     Dim sProcKey As String
@@ -26,7 +26,7 @@ Public Sub GetCodeModule(ByRef dicProcInfo As Dictionary, _
                 If Not dicProcInfo.Exists(sProcKey) Then
                     Set cProcInfo = New ProcedureInfo
                     cProcInfo.ModName = sMod
-                    cProcInfo.ModType = ModuleType
+                    cProcInfo.ModType = moduleType
                     cProcInfo.ProcName = sProcName
                     cProcInfo.ProcKind = iProcKind
                     cProcInfo.LineNo = i
