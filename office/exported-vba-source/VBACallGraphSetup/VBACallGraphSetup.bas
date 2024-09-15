@@ -27,6 +27,7 @@ Public Sub ExportModules(ByVal wb As Workbook)
     r = KzCreateWorksheetInWorkbook(wb, sheetName)
     Dim ws As Worksheet
     Set ws = wb.Worksheets(sheetName)
+    ws.Activate
     
     'プロシジャの情報をシートに出力する
     Dim v
