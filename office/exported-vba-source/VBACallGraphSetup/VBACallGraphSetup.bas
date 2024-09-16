@@ -34,7 +34,7 @@ Public Sub ExportModules(ByVal wb As Workbook)
     With ws
         .Cells.Clear
         .Range("A1:I1").Value = Array("Project", "ModuleType", "Module", "Scope", "ProcKind", "Procedure", "LineNo", "Source", "Comment")
-        .Range("A1:H1").Interior.Color = RGB(200, 200, 200) ' 背景色をグレー
+        .Range("A1:I1").Interior.Color = RGB(200, 200, 200) ' 背景色をグレー
         i = 2
         For Each v In dicProcInfo.Items
             .Cells(i, 1) = wb.VBProject.Name   ' KazurayamVbaLib
